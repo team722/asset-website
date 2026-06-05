@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #14985D;
+  --color-brand-primary-hover: #008f4c;
+  --color-brand-secondary:#20288B;
+  --color-brand-accent: #20288B;
+  --color-brand-bg-alt: #F4F9F7;
+  --color-brand-bg-hover: #E6F3EE;
+  --color-brand-gradient-end: #A7DFCB;
+  --color-brand-text-dark: #1F2937;
+  --color-brand-award-border: #1A2E46;
+  --color-brand-gold: #D4AF37;
+   --gradient-image-overlay: linear-gradient(
+    178.93deg,
+    rgba(0, 0, 0, 0) 0.91%,
+    rgba(32, 40, 139, 0.9) 99.08%
+  );
+}
+
