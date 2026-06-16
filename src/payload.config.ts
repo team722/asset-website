@@ -11,6 +11,7 @@ import { Header } from './globals/Header'
 import { Footer } from './globals/Footer'
 import { HomePage } from './globals/HomePage'
 import { AboutPage } from './globals/AboutPage'
+import { ProgrammesPage } from './globals/ProgrammesPage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -22,7 +23,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  globals: [Header, Footer, HomePage, AboutPage],
+  globals: [Header, Footer, HomePage, AboutPage, ProgrammesPage],
   collections: [Users, Media, Pages, Portfolios],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'super-secret',
