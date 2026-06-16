@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import React from 'react'
 
 export const JourneySection = ({ data }: { data: any }) => {
+  console.log('JourneySection data:', data,data?.featuredVideo?.videoUrl,data?.sideVideos)
   return (
     <section className="py-20 bg-brand-bg-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,11 +21,13 @@ export const JourneySection = ({ data }: { data: any }) => {
               ) : (
                  <div className="w-full h-full bg-gray-300"></div>
               )}
+              <Link href={data?.featuredVideo?.videoUrl || '#'} target="_blank" rel="noopener noreferrer">
               <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-brand-primary shadow-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>
                 </div>
               </div>
+              </Link>
             </div>
             <h3 className="mt-4 text-xl font-bold text-gray-900">{data?.featuredVideo?.title || 'Accessing Government Schemes Made Easy'}</h3>
             <p className="text-brand-accent text-sm font-medium mt-1">{data?.featuredVideo?.duration || '8 years'}</p>
@@ -38,11 +42,13 @@ export const JourneySection = ({ data }: { data: any }) => {
                    ) : (
                      <div className="w-full h-full bg-gray-300"></div>
                    )}
+                          <Link href={video?.videoUrl || '#'} target="_blank" rel="noopener noreferrer">
                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all">
                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-primary shadow-lg">
                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>
                      </div>
                    </div>
+                   </Link>
                  </div>
                  <h3 className="text-md font-bold text-gray-900 line-clamp-2 leading-snug">{video?.title || (i === 0 ? 'A key that Unlocks Success' : 'Empowering Tribal Art & Culture')}</h3>
                  <p className="text-brand-accent text-xs font-medium mt-1">{video?.duration || (i === 0 ? '4 years' : '7 years')}</p>
