@@ -4,7 +4,7 @@ export const AboutHero = ({ data }: { data: any }) => {
   const bgUrl = data?.heroBackgroundImage?.url || 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2000&auto=format&fit=crop'
   
   return (
-    <section className="px-4 py-6">
+    <section className="px-4 pt-16 sm:pt-24">
       <div 
         className="relative w-full h-[400px] flex items-center justify-center bg-cover bg-center rounded-3xl overflow-hidden max-w-7xl mx-auto shadow-lg"
         style={{ backgroundImage: `url(${bgUrl})` }}
