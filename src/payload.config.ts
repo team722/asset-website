@@ -17,7 +17,10 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
+  // Automatically use the live server URL in production to prevent environment variable build issues
+  serverURL: process.env.NODE_ENV === 'production' 
+    ? 'https://darkslategray-whale-933394.hostingersite.com' 
+    : 'http://localhost:3000',
   admin: {
     user: Users.slug,
     importMap: {
