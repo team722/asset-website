@@ -18,7 +18,8 @@ export const Media: CollectionConfig = {
     },
   ],
   upload: {
-    // This forces Payload to use the absolute path to the media folder
-    staticDir: path.resolve(dirname, '../../media'),
+    // This tells Payload the exact absolute path to the Next.js public folder
+    staticDir: path.resolve(dirname, '../../public/media'),
+    // This tells Payload the URL path to serve the image from
   },
 }
