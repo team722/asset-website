@@ -17,6 +17,8 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+    // ADD THIS LINE RIGHT HERE:
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
   admin: {
     user: Users.slug,
     importMap: {
@@ -37,7 +39,10 @@ export default buildConfig({
   },
   db: sqliteAdapter({
     client: {
-      url: process.env.DATABASE_URI || 'file:./payload.db',
+      // In production on Hostinger, use the persistent absolute path so it doesn't get deleted on deploy
+      url: process.env.DATABASE_URI || (process.env.NODE_ENV === 'production' 
+        ? 'file:/home/u132651874/domains/darkslategray-whale-933394.hostingersite.com/persistent_data/payload.db'
+        : 'file:./payload.db'),
     },
   }),
 })
