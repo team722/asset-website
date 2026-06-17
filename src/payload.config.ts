@@ -22,6 +22,11 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+     meta: {
+       title: 'ASSET CMS',
+  description: 'ASSET Trust content management system',
+      icons: '/admin-favicon.png',
+    },
   },
   globals: [Header, Footer, HomePage, AboutPage, ProgrammesPage],
   collections: [Users, Media, Pages, Portfolios],
