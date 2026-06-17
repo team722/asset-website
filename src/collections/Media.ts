@@ -18,10 +18,8 @@ export const Media: CollectionConfig = {
     },
   ],
   upload: {
-    // In production, save directly to Hostinger's persistent public_html folder
-    // Locally, save to the Next.js public folder
-    staticDir: process.env.NODE_ENV === 'production'
-      ? '/home/u132651874/domains/darkslategray-whale-933394.hostingersite.com/public_html/media'
-      : path.resolve(dirname, '../../public/media'),
+    // This tells Payload the exact absolute path to the Next.js public folder
+    staticDir: path.resolve(dirname, '../../public/media'),
+    // This tells Payload the URL path to serve the image from
   },
 }
