@@ -95,6 +95,15 @@ export const ContactInfo = ({ data }: { data: any }) => {
           
           <div className="mt-16 pt-8 border-t border-gray-200">
             <h3 className="text-3xl font-black text-brand-secondary uppercase tracking-tight mb-2">Connect With Us!</h3>
+            {data?.mapEmbedCode ? (
+              <div className="mt-6 w-full aspect-[16/9] rounded-3xl overflow-hidden shadow-md">
+                <div dangerouslySetInnerHTML={{ __html: data.mapEmbedCode }} />
+              </div>
+            ) : (
+              <p className="mt-4 text-gray-600 text-sm md:text-base">
+                Map is not available at the moment. Please check back later.
+              </p>
+            )}
           </div>
 
         </div>

@@ -35,6 +35,7 @@ export const ContactPage: GlobalConfig = {
               ],
             },
             { name: 'physicalAddress', type: 'textarea', label: 'Physical Address' },
+            { name: 'mapEmbedCode', type: 'textarea', label: 'Map Embed Code' },
           ],
         },
       ]
