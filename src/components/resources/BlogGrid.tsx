@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export const BlogGrid = ({ blogItems }: { blogItems: any[] }) => {
   if (!blogItems || blogItems.length === 0) return null;
@@ -9,8 +10,10 @@ export const BlogGrid = ({ blogItems }: { blogItems: any[] }) => {
         <h2 className="text-4xl font-bold text-brand-text-dark mb-10">Blogs</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {blogItems.map((blog, i) => (
-            <div key={i} className="relative group rounded-2xl overflow-hidden shadow-lg aspect-[3/4] cursor-pointer">
+          {blogItems.map((blog, i) => {
+            const cleanSlug = blog.slug ? blog.slug.replace(/^\//, '') : '';
+            return (
+            <Link href={cleanSlug ? `/resources/blogs/${cleanSlug}` : '#'} key={i} className="relative group rounded-2xl overflow-hidden shadow-lg aspect-[3/4] cursor-pointer block">
               {blog?.coverImage?.url ? (
                 <img src={blog.coverImage.url} alt={blog.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               ) : (
@@ -22,12 +25,14 @@ export const BlogGrid = ({ blogItems }: { blogItems: any[] }) => {
               
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                 <p className="text-white text-sm leading-relaxed line-clamp-4 font-medium opacity-90 group-hover:opacity-100 transition-opacity">
+                 <h3 className="text-white font-bold text-lg mb-2 line-clamp-2 drop-shadow-md">{blog.title}</h3>
+                 <p className="text-white/90 text-sm leading-relaxed line-clamp-3 font-medium opacity-90 group-hover:opacity-100 transition-opacity">
                    {blog.excerpt}
                  </p>
               </div>
-            </div>
-          ))}
+            </Link>
+            );
+          })}
         </div>
       </div>
     </section>
