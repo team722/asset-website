@@ -56,7 +56,7 @@ export const DonateIntro = ({ data }: { data: any }) => {
             </div>
 
             {/* Bank Details */}
-            <div className="space-y-3 text-sm sm:text-base text-gray-800">
+            <div className="space-y-3 text-sm sm:text-base text-gray-800 border border-green-500 rounded-lg p-6">
                <div className="flex flex-col sm:flex-row">
                  <span className="font-bold min-w-[150px]">Bank Name:</span>
                  <span className="text-gray-600">{data?.bankDetails?.bankName || 'Indian Bank'}</span>
