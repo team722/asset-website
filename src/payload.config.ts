@@ -7,11 +7,14 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Portfolios } from './collections/Portfolios'
+import { News } from './collections/News'
+import { Blogs } from './collections/Blogs'
 import { Header } from './globals/Header'
 import { Footer } from './globals/Footer'
 import { HomePage } from './globals/HomePage'
 import { AboutPage } from './globals/AboutPage'
 import { ProgrammesPage } from './globals/ProgrammesPage'
+import { ResourcesPage } from './globals/ResourcesPage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -20,7 +23,7 @@ export default buildConfig({
   // Automatically use the live server URL in production to prevent environment variable build issues
   serverURL: process.env.NODE_ENV === 'production' 
     ? 'https://darkslategray-whale-933394.hostingersite.com' 
-    : 'http://localhost:3000',
+    : 'http://localhost:3001',
   admin: {
     user: Users.slug,
     importMap: {
@@ -32,8 +35,8 @@ export default buildConfig({
       icons: '/admin-favicon.png',
     },
   },
-  globals: [Header, Footer, HomePage, AboutPage, ProgrammesPage],
-  collections: [Users, Media, Pages, Portfolios],
+  globals: [Header, Footer, HomePage, AboutPage, ProgrammesPage, ResourcesPage],
+  collections: [Users, Media, Pages, Portfolios, News, Blogs],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'super-secret',
   typescript: {
