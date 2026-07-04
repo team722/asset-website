@@ -17,6 +17,7 @@ import { ProgrammesPage } from './globals/ProgrammesPage'
 import { ResourcesPage } from './globals/ResourcesPage'
 import { ContactPage } from './globals/ContactPage'
 import { DonatePage } from './globals/DonatePage'
+import { PolicyPage } from './globals/PolicyPage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -37,7 +38,7 @@ export default buildConfig({
       icons: '/admin-favicon.png',
     },
   },
-  globals: [Header, Footer, HomePage, AboutPage, ProgrammesPage, ResourcesPage, ContactPage, DonatePage],
+  globals: [Header, Footer, HomePage, AboutPage, ProgrammesPage, ResourcesPage, ContactPage, DonatePage, PolicyPage],
   collections: [Users, Media, Pages, Portfolios, News, Blogs],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'super-secret',

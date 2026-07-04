@@ -30,6 +30,11 @@ type FooterData = {
     linkUrl?: string | null
     displayOrder?: number | null
   }[] | null
+  policyLinks?: {
+    id?: string | null
+    linkTitle?: string | null
+    linkUrl?: string | null
+  }[] | null
 }
 
 const getUploadUrl = (upload?: UploadValue) =>
@@ -97,15 +102,12 @@ export const Footer = ({ data }: { data: FooterData | null }) => {
           </ul>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-[#D00C85] text-center text-sm text-gray-400">
-         {/* Â© {new Date().getFullYear()} Organization Name. All rights reserved. */}
-      </div>
-        <div className="max-w-7xl mx-auto flex space-x-4">
+        <div className="max-w-7xl mx-auto flex space-x-4 mb-6 md:mb-0 justify-center md:justify-start">
             {socialLinks.map((social, i) => {
               const iconUrl = getUploadUrl(social.icon)
 
               return (
-                <Link key={social.id || `${social.platform}-${i}`} href={social.url || '#'} className="w-10 h-10  flex items-center justify-center hover:bg-white/20 transition-colors">
+                <Link key={social.id || `${social.platform}-${i}`} href={social.url || '#'} className="w-10 h-10 flex items-center justify-center hover:bg-white/20 rounded transition-colors">
                   {iconUrl ? (
                     <img
                       src={iconUrl}
@@ -118,7 +120,21 @@ export const Footer = ({ data }: { data: FooterData | null }) => {
                 </Link>
               )
             })}
-          </div>
+        </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-[#D00C85] flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+         <div className="text-center md:text-left">
+           © {new Date().getFullYear()} Adivasi Social Service Educational Trust (ASSET). All rights reserved.
+         </div>
+         {data?.policyLinks && data.policyLinks.length > 0 && (
+           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+             {data.policyLinks.map((link, i) => (
+               <Link key={link.id || i} href={link.linkUrl || '#'} className="hover:text-white transition-colors">
+                 {link.linkTitle}
+               </Link>
+             ))}
+           </div>
+         )}
+      </div>
     </footer>
   )
 }

@@ -53,5 +53,17 @@ export const Footer: GlobalConfig = {
         { name: 'displayOrder', type: 'number', label: 'Display Order' },
       ],
     },
+    {
+      name: 'policyLinks',
+      type: 'array',
+      labels: {
+        singular: 'Policy Link',
+        plural: 'Policy Links',
+      },
+      fields: [
+        { name: 'linkTitle', type: 'text', required: true, label: 'Link Title (e.g. Privacy Policy)' },
+        { name: 'linkUrl', type: 'text', required: true, label: 'Link URL (e.g. /policy)' },
+      ],
+    },
   ],
 }
