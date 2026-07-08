@@ -7,6 +7,8 @@ import { Footer } from '@/components/layout/Footer'
 import { VolunteerIntro } from '@/components/volunteer/VolunteerIntro'
 import { VolunteerTestimonials } from '@/components/volunteer/VolunteerTestimonials'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: 'Volunteer With ASSET | Adivasi Social Service Educational Trust',
   description: 'Join ASSET as a volunteer to help empower tribal and underprivileged communities in Tamil Nadu.',

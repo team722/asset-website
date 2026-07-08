@@ -6,6 +6,8 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { PolicyContent } from '@/components/policy/PolicyContent'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: 'Policy & Procedures | ASSET',
   description: 'Learn about ASSET Trust field observations, area visits, and community assessment policies.',
