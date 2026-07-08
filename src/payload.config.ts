@@ -18,6 +18,8 @@ import { ResourcesPage } from './globals/ResourcesPage'
 import { ContactPage } from './globals/ContactPage'
 import { DonatePage } from './globals/DonatePage'
 import { PolicyPage } from './globals/PolicyPage'
+import { VolunteerPage } from './globals/VolunteerPage'
+import { VolunteerRegistrations } from './collections/VolunteerRegistrations'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -26,7 +28,7 @@ export default buildConfig({
   // Automatically use the live server URL in production to prevent environment variable build issues
   serverURL: process.env.NODE_ENV === 'production' 
     ? 'https://darkslategray-whale-933394.hostingersite.com' 
-    : 'http://localhost:3001',
+    : 'http://localhost:3000',
   admin: {
     user: Users.slug,
     importMap: {
@@ -38,8 +40,8 @@ export default buildConfig({
       icons: '/admin-favicon.png',
     },
   },
-  globals: [Header, Footer, HomePage, AboutPage, ProgrammesPage, ResourcesPage, ContactPage, DonatePage, PolicyPage],
-  collections: [Users, Media, Pages, Portfolios, News, Blogs],
+  globals: [Header, Footer, HomePage, AboutPage, ProgrammesPage, ResourcesPage, ContactPage, DonatePage, PolicyPage, VolunteerPage],
+  collections: [Users, Media, Pages, Portfolios, News, Blogs, VolunteerRegistrations],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'super-secret',
   typescript: {
