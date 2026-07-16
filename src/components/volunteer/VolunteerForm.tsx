@@ -39,7 +39,7 @@ export const VolunteerForm = () => {
   }
 
   return (
-    <div className="bg-white rounded-3xl p-8 border border-green-200 shadow-sm h-full flex flex-col justify-center">
+    <div className="bg-white rounded-3xl p-8 border border-green-200 shadow-sm flex flex-col ">
       <h3 className="text-xl font-semibold mb-8 text-brand-text-dark">Volunteer registration form</h3>
       
       {status === 'success' ? (
