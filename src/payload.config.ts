@@ -27,8 +27,8 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   // Automatically use the live server URL in production to prevent environment variable build issues
   serverURL: process.env.NODE_ENV === 'production' 
-    ? 'https://darkslategray-whale-933394.hostingersite.com' 
-    : 'http://localhost:3000',
+    ? 'https://assettamilnadu.com' 
+    : 'http://localhost:3001',
   admin: {
     user: Users.slug,
     importMap: {
